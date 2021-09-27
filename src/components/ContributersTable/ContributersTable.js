@@ -333,20 +333,20 @@ export default function EnhancedTable(props) {
     try{
     let cd=new Date()
     let newdate=new Date(d)
-    if(newdate=="Invalid Date" || d===null){
+    if(newdate==="Invalid Date" || d===null){
       return null
     }
     let seconds=(cd.getTime()-newdate.getTime())/1000
     console.log(seconds)
-    var days = Math. floor(seconds / (3600*24));
-    var hours = Math. floor(seconds % (3600*24) / 3600);
-    var minutes = Math. floor(seconds % 3600 / 60);
-    var sec = Math. floor(seconds % 60);
+    var days = Math.floor(seconds / (3600*24));
+    var hours = Math.floor(seconds % (3600*24) / 3600);
+    var minutes = Math.floor(seconds % 3600 / 60);
+    var sec = Math.floor(seconds % 60);
     let result=""
     if(minutes===0){
         result=sec+"s "+"ago"
     }
-    else if(days==0){
+    else if(days===0){
       result=hours+"h "+minutes+"m "+"ago"
     }
     else{
@@ -453,7 +453,7 @@ export default function EnhancedTable(props) {
                       <TableCell align="right">{row.carbs}</TableCell>
                       <TableCell align="right">{calculateExpirity(row.protein)}</TableCell>
                       <TableCell align="right">{row.link &&<Button variant="contained" color="primary" onClick={()=>{
-                    let url="https://localhost:3000/notesbylink/"+row.link
+                    let url="https://makeanote.vercel.app/notesbylink/"+row.link
                     copy(url)
                     alert("copied")
                     }} >
