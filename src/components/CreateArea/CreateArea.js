@@ -174,7 +174,7 @@ function CreateArea() {
         newCards.splice(deleteId,1)
         console.log(newCards)
         setCards(newCards)
-        setLoadingState(true)
+        // setLoadingState(true)
         axios.post('/notes/deleteNotes',{
             id:deleteId,
             authToken:authToken
@@ -182,7 +182,7 @@ function CreateArea() {
         .then(res=>{
             console.log(res.data)
             createNotificationForDelete('success')
-            setLoadingState(false)
+            
         })
         .catch(err=>{
             console.log(err)
@@ -196,13 +196,13 @@ function CreateArea() {
         console.log(hideId)
         createNotificationForHidden('success')
         setCards(newCards)
-        setLoadingState(true)
+        
         axios.post('/hidden/hideNotes',{
             id:hideId,
             authToken:authToken
         })
         .then(res=>{
-            setLoadingState(false)
+            
         })
     }
 
