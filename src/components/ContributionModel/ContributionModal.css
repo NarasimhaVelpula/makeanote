@@ -1,0 +1,4 @@
+.mainButtons{
+    display: flex;
+    justify-content: space-between;
+}

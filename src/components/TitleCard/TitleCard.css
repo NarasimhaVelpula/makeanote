@@ -1,0 +1,11 @@
+.image{
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.card{
+    position: relative;
+    margin:20px 10px 20px 10px;
+    border-radius: 15px;
+   
+}

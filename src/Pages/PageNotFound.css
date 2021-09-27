@@ -1,0 +1,29 @@
+.PageNotFound{
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.PageNotFoundImage{
+    background: #FCEEE5;
+    height: 400px;
+}
+
+.backButton{
+    border: none;
+    padding: 10px;
+    color: #e21212;
+    background:  inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+.backButton:hover{
+    cursor: pointer;
+    background-color: #e21212;
+    color: aliceblue;
+   
+}
