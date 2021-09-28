@@ -29,9 +29,8 @@ export default function ContributionModal(props) {
   const classes = useStyles();
   const [generateLinkModal,setGenerateLinkModal]=useState(false)
   const [addUserModal,setAddUserModal]=useState(false)
-  const {modalState,handleModalClose,giveCard,noteId,noUsers,editModalCard}=props
+  const {modalState,handleModalClose,noteId,noUsers,editModalCard}=props
   const [open, setOpen] = React.useState(false);
-  const [card,setCard]=useState(props.card)
   let history=useHistory()
   const [contributionData,setContributionData]=useState([])
   const [linkData,setLinkData]=useState([])
@@ -39,6 +38,7 @@ export default function ContributionModal(props) {
  
   useEffect(()=>{
     setOpen(modalState)
+    if(noUsers){
     axios.post('/contribution/getContributers',{
       id:noteId,
        authToken:localStorage.getItem('auth-token')
@@ -51,6 +51,7 @@ export default function ContributionModal(props) {
     .catch(err=>{
       console.log(err.data)
     })
+  }
 },[modalState,addUserModal,generateLinkModal])
   
 
