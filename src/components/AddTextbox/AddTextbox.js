@@ -7,7 +7,7 @@ function AddTextbox(props) {
     return (
         <div>
             <IconButton color="inherit" onClick={handleAddTextbox}>
-                <Tooltip title="Add Checkbox">
+                <Tooltip title="Add Textbox">
                     <TextFieldsIcon color="inherit" />
                 </Tooltip>
             </IconButton>
