@@ -59,7 +59,7 @@ export default function NoteModal(props) {
   const handleTitleChange=(e)=>{
     let newCard={...card}
     newCard.Title=e.target.value
-    props.card.title=e.target.value
+    props.card.Title=e.target.value
     
    
     giveCard(newCard)
