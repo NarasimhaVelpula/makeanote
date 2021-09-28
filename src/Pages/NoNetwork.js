@@ -22,7 +22,7 @@ function NoNetwork() {
     }}>We had a break up with our server, Can you please help to fix that
 
     </p>
-    <Button variant="contained" color="secondary">Try Again</Button>
+    <Link to="/"><Button variant="contained" color="secondary">Try Again</Button></Link>
     </center>
         </div>
     )
