@@ -134,7 +134,7 @@ const Listbox = styled('ul')`
 export default function Searchuser(props) {
 
   const {noteId,handleModalClose}=props
-  const [butval,setButval]=useState("Save")
+  const [butval,setButval]=useState(true)
   console.log(noteId)
   const [users,setUsers]=useState([])
   useEffect(()=>{
@@ -154,7 +154,7 @@ export default function Searchuser(props) {
     console.log("adding values")
     console.log(value)
     console.log(rwValue)
-    setButval("saving")
+    setButval(false)
     axios.post('/contribution/addContributers',{
       list:value,
       id:noteId,
@@ -167,7 +167,7 @@ export default function Searchuser(props) {
     })
     .catch(err=>{
       console.log(err)
-      setButval("Save")
+      setButval(true)
     })
   }
 
@@ -228,7 +228,7 @@ export default function Searchuser(props) {
 </RadioGroup>
         <IconButton>
 
-        <Button variant="contained" color="primary" onClick={addUsers} disabled={value.length!=0?false:true}>Save</Button>
+        <Button variant="contained" color="primary" onClick={addUsers} disabled= { butval && value.length!=0?false:true}>{butval?"Save":"Saving"}</Button>
         </IconButton>
       </div>
     </NoSsr>
