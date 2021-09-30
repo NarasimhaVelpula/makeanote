@@ -127,14 +127,14 @@ export default function OtherNotesCard(props) {
           })}
         </Typography>
         
-      </CardContent>
+     </CardContent>
       </div>
-      <CardActions style={{padding:"0px"}}>
+      {access==="readnwrite"? <CardActions style={{padding:"0px"}}>
         <CardFooter handleContributeModalOpen={handleContributeModalOpen}
         deleteNoteCard={props.deleteNoteCard}
         noteId={noteId}
         />
-      </CardActions>
+      </CardActions>:""}
     </Card>
     <NoteModal modalState={modalState} handleModalClose={handleModalClose} handleContributeModalOpen={handleContributeModalOpen} 
     card={props.card} giveCard={giveCard} 
